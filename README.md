@@ -61,7 +61,7 @@ Nice To Have:
 
 ## Initial Wireframes
 
-![Cocktail Wireframe](<insert image>)
+![Cocktail Wireframe](<./Screen Shot 2023-11-21 at 9.00.57 PM.png>)
 
 ## Usage
 

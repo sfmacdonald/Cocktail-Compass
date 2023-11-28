@@ -5,11 +5,11 @@
     <title>Cocktail Compass</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 
 <body>
-    
+
     <header>
         <h1>Welcome To The Cocktail Compass!</h1>
         <div class="header" onclick="menuBar(this)">
@@ -22,34 +22,40 @@
     <main>
         <div id="intro" class="intro">
             <h2>Introduction</h2>
-            <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit / ingredient below and see what recipies match!</p>
+            <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit / ingredient below
+                and see what recipies match!</p>
         </div>
-    
+
         <div id="search" class="search">
             <form id="search-form">
-            <h2>Search For A Recipe</h2>
-                <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient:">
-                <button type="submit" >Search</button>
+                <h2>Search For A Recipe</h2>
+                <textarea type="text" id="ingredient" placeholder="Enter your spirit or ingredient:"> </textarea>
+                <button class="btn">Search</button>
             </form>
         </div>
-    
+
         <div id="results" class="results">
             <h2>RESULTS</h2>
         </div>
 
-    
+
     </main>
 
     <div class=footer>
         <footer id="contact" class="contact">
             <h3>FOOTER</h3>
             <ul>
-                <li><a href="BLAH">Saved Drinks</a><li>
+                <li><a href="BLAH">Saved Drinks</a>
+                <li>
                 <li><a href="BLAH">Share Drinks</a></li>
             </ul>
         </footer>
+    </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
 
 </body>
 

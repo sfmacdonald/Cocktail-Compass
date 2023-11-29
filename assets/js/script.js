@@ -26,13 +26,7 @@ $(submitBtn).on('click', function (event) {
         })
         //for loop for looping over data objects and "trying" to console log the ingredients
         .then(data => {
-            for (let i = 0; i < data.length; i++) {
-                var ingredientLi = data[i].ingredients
-                ingredientLi.push(listOfI)
-
-
-            }
-            console.log(listOfI)
+            console.log(data)
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

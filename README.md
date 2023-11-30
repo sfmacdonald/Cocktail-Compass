@@ -16,7 +16,7 @@ Leverage APIs to search cocktail recipes by spirits/ingredients
 
 ## Description
 
-As an aspiring bartender/day drinker, I need the ability to search for cocktail recipes by inputing an ingredient or spirit into a database so that I can 
+As an aspiring bartender, I need the ability to search for cocktail recipes by inputing an ingredient or spirit into a database so that I can be the best party host possible.
 
 ## Collaboraters
 
@@ -27,12 +27,14 @@ The following members of the ASU Coding Bootcamp 2023-2024 participated on this 
 - Sean MacDonald
 - Miguel Rojas
 
+The collaborators have agreed to leverge Trello as a project tracker to ensure all acceptance criteria are met in the final product and no redundant work is completed. The Trello board may be found here: https://trello.com/b/G297qRRy/cocktail-compass 
+
 ## APIs
 
 The following APIs are leveraged for this search engine:
 
 1. https://api-ninjas.com/api/cocktail
-2. 
+2. ?
 
 ## Features
 
@@ -42,7 +44,7 @@ Must Have (MVP):
 
     1. Search for cocktail recipes by inputting an ingredient or spirit
         - Return any possible recipes that match search
-		- Display picture of the drink
+        - Display picture of the drink
 
 Nice To Have:
 
@@ -77,30 +79,3 @@ When accessed, the website should reflect the following image:
 2. 
 
 3. 
- 
-
-
- ## Project check off list ##
-
-You and your group will use everything you’ve learned over the past six weeks to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
-
-1. Use a CSS framework other than Bootstrap.
-    - In Progress
-2. Be deployed to GitHub Pages.
-    - In Progress
-3. Be interactive (i.e: accept and respond to user input).
-    - In Progress
-4. Use at least two server-side APIs.
-    - Missing one API
-5. Does not use alerts, confirms, or prompts (use modals).
-    - In Progress
-6. Use client-side storage to store persistent data.
-    - In Progress
-7. Be responsive.
-    - In Progress
-8. Have a polished UI.
-    - In Progress
-9. Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id-naming conventions, indentation, quality comments, etc.).
-    - In Progress
-10. Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-    - In Progress

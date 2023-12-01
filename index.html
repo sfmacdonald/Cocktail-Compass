@@ -24,32 +24,39 @@
 
     <main class="main">
         <div id="intro" class="intro">
-            <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit / ingredient below
-                and see what recipies match!
-            </p>
-            <form>
-                <h2>Search For A Recipe</h2>
-                <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient:"> </input>
-                <button class="btn">Search</button>
+            <h2>Introduction</h2>
+            <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit/ingredient below
+                and see what recipes match!</p>
+        </div>
+
+        <h2>Search For A Recipe</h2>
+        <div id="search" class="search">
+            <form id="search-form">
+                <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient">
+                <button class="btn" type="submit">Search</button>
             </form>
         </div>
+
+        <h2>Results</h2>
+        <div id="results" class="recipe-results">
+            <div class="cocktail-container">
+            </div>
+        </div>
+
     </main>
 
-    <div class=footer>
+    <div class="footer">
         <footer id="contact" class="contact">
             <h3>FOOTER</h3>
             <ul>
-                <li><a href="BLAH">Saved Drinks</a>
-                <li>
+                <li><a href="BLAH">Saved Drinks</a></li>
                 <li><a href="BLAH">Share Drinks</a></li>
             </ul>
         </footer>
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
-
 
 </body>
 

@@ -6,39 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 </head>
 
 <body>
 
     <header>
-        <h1>Welcome To The Cocktail Compass!</h1>
-        <div class="header" onclick="menuBar(this)">
+        <nav class="header">
             <a href="#">
                 <img src="https://clipart-library.com/images/6cyXxxnxi.png" alt="Menu Icon">
             </a>
-        </div>
+            <h1>Welcome To The Cocktail Compass!</h1>
+        </nav>
+
     </header>
 
-    <main>
+    <main class="main">
         <div id="intro" class="intro">
-            <h2>Introduction</h2>
             <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit / ingredient below
-                and see what recipies match!</p>
-        </div>
-
-        <div id="search" class="search">
-            <form id="search-form">
+                and see what recipies match!
+            </p>
+            <form>
                 <h2>Search For A Recipe</h2>
-                <textarea type="text" id="ingredient" placeholder="Enter your spirit or ingredient:"> </textarea>
+                <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient:"> </input>
                 <button class="btn">Search</button>
             </form>
         </div>
-
-        <div id="results" class="results">
-            <h2>RESULTS</h2>
-        </div>
-
-
     </main>
 
     <div class=footer>

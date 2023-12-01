@@ -27,7 +27,7 @@ img {
     height: 100px; 
   }
 
-h1, h2, h3 {
+h1, h2 {
     margin: 0;
     padding: 0;
 }
@@ -45,15 +45,16 @@ h1, h2, h3 {
 /* search styles */
 .search {
     flex: 1;
-    margin: 10px auto;
+    margin: 10px;
     padding: 10px;
-    width: auto;
+    width: 300px;
 }
 
 #search-form {
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    flex-direction: column;
+    flex-direction: row;
     border-bottom: 1px solid gray;
 }
 
@@ -66,6 +67,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     width: 100px;
+    height: auto;
 }
 
 button:hover {
@@ -73,17 +75,43 @@ button:hover {
 }
 
 /* results style */
-.recipie-results {
-    flex-direction: row;
+#results {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cocktail-container {
     text-align: center;
     margin: 5px;
     padding: 5px;
     background-color: #3f251f;
     color: white;
     border-radius: 5px;
-    margin-right: 5px;
-    display: inline-block;
     font-size: smaller;
+    width: 100px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-size: large;
+    text-decoration: underline;
+}
+
+ingredients-label,
+.instructions-label {
+    font-weight: bold;
+}
+
+.ingredients-list,
+.instructions-text {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Footer styles */

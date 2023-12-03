@@ -2,6 +2,9 @@ var submitBtn = $("button");
 var ingredient = $("#ingredient");
 var resultsContainer = $("#results"); // Reference to results container
 
+// Hide results container initially
+resultsContainer.hide();
+
 // event listener on submit button
 $(submitBtn).on('click', function (event) {
     event.preventDefault();
@@ -27,37 +30,43 @@ $(submitBtn).on('click', function (event) {
         .then(data => {
             // Clear previous results
             resultsContainer.empty();
-
+        
             if (data.length > 0) {
                 // Show results container
                 resultsContainer.show();
-
+        
                 // Iterate over data and append to the results container
                 for (let i = 0; i < data.length; i++) {
                     var cocktail = data[i];
                     var cocktailContainer = $("<div class='cocktail-container'></div>");
-
+        
                     // Append name
                     cocktailContainer.append(`<h3>${cocktail.name}</h3>`);
-
+        
                     // Append Ingredients label
                     cocktailContainer.append(`<p class='ingredients-label'>Ingredients:</p>`);
-
+        
+                    // Create a div for ingredients with bullets
+                    var ingredientsContainer = $("<div class='ingredients-container'></div>");
+        
                     // Create a ul element for ingredients
                     var listOfI = $("<ul class='ingredients-list'></ul>");
-
+        
                     // Loop over ingredients and append to the list
                     for (let j = 0; j < cocktail.ingredients.length; j++) {
                         listOfI.append(`<li>${cocktail.ingredients[j]}</li>`);
                     }
-
-                    // Append list of ingredients
-                    cocktailContainer.append(listOfI);
-
+        
+                    // Append list of ingredients to the div
+                    ingredientsContainer.append(listOfI);
+        
+                    // Append the ingredients container to the cocktail container
+                    cocktailContainer.append(ingredientsContainer);
+        
                     // Append instructions with label
                     cocktailContainer.append(`<p class='instructions-label'>Instructions:</p>`);
                     cocktailContainer.append(`<p class='instructions-text'>${cocktail.instructions}</p>`);
-
+        
                     // Append the cocktail container to the results container
                     resultsContainer.append(cocktailContainer);
                 }
@@ -68,6 +77,7 @@ $(submitBtn).on('click', function (event) {
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
+            resultsContainer.hide();
         });
 });
 

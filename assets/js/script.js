@@ -9,7 +9,7 @@ resultsContainer.hide();
 $(submitBtn).on('click', function (event) {
     event.preventDefault();
 
-    var userIngredients = $(this).siblings("#ingredient").val();
+    var userIngredients = ingredient.val();
     console.log(userIngredients);
     // might need to change to search by ingredient and not drink name
     var name = userIngredients;
@@ -30,45 +30,54 @@ $(submitBtn).on('click', function (event) {
         .then(data => {
             // Clear previous results
             resultsContainer.empty();
-        
+
             if (data.length > 0) {
                 // Show results container
                 resultsContainer.show();
-        
+
                 // Iterate over data and append to the results container
                 for (let i = 0; i < data.length; i++) {
                     var cocktail = data[i];
                     var cocktailContainer = $("<div class='cocktail-container'></div>");
-        
+
                     // Append name
                     cocktailContainer.append(`<h3>${cocktail.name}</h3>`);
-        
+
                     // Append Ingredients label
                     cocktailContainer.append(`<p class='ingredients-label'>Ingredients:</p>`);
-        
+
                     // Create a div for ingredients with bullets
                     var ingredientsContainer = $("<div class='ingredients-container'></div>");
-        
+
                     // Create a ul element for ingredients
                     var listOfI = $("<ul class='ingredients-list'></ul>");
-        
+
                     // Loop over ingredients and append to the list
                     for (let j = 0; j < cocktail.ingredients.length; j++) {
                         listOfI.append(`<li>${cocktail.ingredients[j]}</li>`);
                     }
-        
+
                     // Append list of ingredients to the div
                     ingredientsContainer.append(listOfI);
-        
+
                     // Append the ingredients container to the cocktail container
                     cocktailContainer.append(ingredientsContainer);
-        
+
                     // Append instructions with label
                     cocktailContainer.append(`<p class='instructions-label'>Instructions:</p>`);
                     cocktailContainer.append(`<p class='instructions-text'>${cocktail.instructions}</p>`);
-        
-                    // Append the cocktail container to the results container
+
+                    // Append the save button
+                    var saveButton = $("<button class='btn save-btn'>Save Recipe</button>");
+                    cocktailContainer.append(saveButton);
+
+                    // Append cocktail container to results container
                     resultsContainer.append(cocktailContainer);
+
+                    // Add click event for save button
+                    saveButton.on('click', function () {
+                        saveRecipeToLocal(cocktail);
+                    });
                 }
             } else {
                 // If no results, hide results container
@@ -80,6 +89,88 @@ $(submitBtn).on('click', function (event) {
             resultsContainer.hide();
         });
 });
+
+// Function to save recipe to localStorage
+function saveRecipeToLocal(recipe) {
+    // Check if localStorage is supported
+    if (typeof Storage !== "undefined") {
+        // Retrieve existing saved recipes or initialize an empty array
+        var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+        // Check if the recipe is already saved
+        if (!savedRecipes.some(savedRecipe => savedRecipe.name === recipe.name)) {
+            // Add the new recipe to the array
+            savedRecipes.push(recipe);
+
+            // Save the updated array to localStorage
+            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            alert("Recipe saved to Favorites!");
+        } else {
+            alert("Recipe is already saved!");
+        }
+    } else {
+        alert("Your browser does not support localStorage. Unable to save recipe.");
+    }
+}
+// Function to display favorited drinks
+function displayFavorites() {
+    // Check if localStorage is supported
+    if (typeof Storage !== "undefined") {
+        // Retrieve saved recipes from localStorage
+        var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+        // Clear previous results
+        resultsContainer.empty();
+
+        if (savedRecipes.length > 0) {
+            // Show results container
+            resultsContainer.show();
+
+            // Iterate over saved recipes and append to the results container
+            for (let i = 0; i < savedRecipes.length; i++) {
+                var savedRecipe = savedRecipes[i];
+                var savedContainer = $("<div class='cocktail-container'></div>");
+
+                // Append name
+                savedContainer.append(`<h3>${savedRecipe.name}</h3>`);
+
+                // Append Ingredients label
+                savedContainer.append(`<p class='ingredients-label'>Ingredients:</p>`);
+
+                // Create div for ingredients with bullets
+                var ingredientsContainer = $("<div class='ingredients-container'></div>");
+
+                // Create a ul element for ingredients
+                var listOfI = $("<ul class='ingredients-list'></ul>");
+
+                // Loop over ingredients and append to the list
+                for (let j = 0; j < savedRecipe.ingredients.length; j++) {
+                    listOfI.append(`<li>${savedRecipe.ingredients[j]}</li>`);
+                }
+
+                // Append list of ingredients to the div
+                ingredientsContainer.append(listOfI);
+
+                // Append the ingredients container to the saved container
+                savedContainer.append(ingredientsContainer);
+
+                // Append instructions with label
+                savedContainer.append(`<p class='instructions-label'>Instructions:</p>`);
+                savedContainer.append(`<p class='instructions-text'>${savedRecipe.instructions}</p>`);
+
+                // Append the saved container to the results container
+                resultsContainer.append(savedContainer);
+            }
+        } else {
+            // If no saved recipes, hide results container
+            resultsContainer.hide();
+        }
+    } else {
+        alert("Your browser does not support localStorage. Unable to retrieve saved recipes.");
+    }
+}
+
+
 
 // function menuBar(x) {
 //     x.classList.toggle("change");

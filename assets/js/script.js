@@ -1,9 +1,11 @@
 var submitBtn = $("button");
 var ingredient = $("#ingredient");
-var resultsContainer = $("#results"); // Reference to results container
+var resultsContainer = $("#results");
+var jokesContainer = $("#dad-jokes");// Reference to results container
 
 // Hide results container initially
 resultsContainer.hide();
+jokesContainer.hide();
 
 // event listener on submit button
 $(submitBtn).on('click', function (event) {
@@ -72,6 +74,7 @@ $(submitBtn).on('click', function (event) {
                     cocktailContainer.append(saveButton);
 
                     // Append cocktail container to results container
+                    // Append the cocktail container to the results container
                     resultsContainer.append(cocktailContainer);
 
                     // Add click event for save button
@@ -88,6 +91,28 @@ $(submitBtn).on('click', function (event) {
             console.error('There was a problem with the fetch operation:', error);
             resultsContainer.hide();
         });
+
+
+    //2nd api fetch request
+
+    $.ajax({
+        method: 'GET',
+        url: 'https://icanhazdadjoke.com/',
+        headers: { 'Accept': 'application/json' },
+        success: function (response) {
+            jokesContainer.show();
+            //console logging joke
+            var dadJoke = response.joke;
+            console.log(dadJoke);
+
+            var jokeSpot = $("<p>").html(dadJoke);
+            $(".jokeParent").append(jokeSpot);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error: ', errorThrown);
+        }
+    });
+
 });
 
 // Function to save recipe to localStorage
@@ -171,7 +196,3 @@ function displayFavorites() {
 }
 
 
-
-// function menuBar(x) {
-//     x.classList.toggle("change");
-// }

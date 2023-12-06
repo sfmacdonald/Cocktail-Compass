@@ -1,51 +1,83 @@
-/* styles.css */
-
-/* global styles */
-body {
-    margin: 5px;
-    padding: 5px;
-    font-family: 'Lobster', cursive; 
-    color: #dec7a4;
-    background-image: url("https://images.unsplash.com/photo-1694659460204-0cf2c4680562?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
 }
 
-/* header styles */
+body {
+    font-family: 'Lobster', cursive;
+    color: #dec7a4;
+    background: url("https://images.unsplash.com/photo-1694659460204-0cf2c4680562?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover;
+    text-align: center;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    font-size: xx-large;
+    font-size: 2rem;
     -webkit-text-stroke: 0.1px #3f251f;
+    background: linear-gradient(to bottom, black, #3f251f);
 }
 
 img {
-    width: 100px; 
-    height: 100px; 
-  }
-
-h1, h2 {
-    margin: 0;
-    padding: 0;
+    width: 100px;
+    height: 100px;
 }
 
-
-/* intro styles */
 .intro {
-    position: relative;
-    height: 300px;
-    width: auto;
-    font-size: x-large;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #dec7a4;
 }
 
-/* search styles */
+button {
+    background-color: #3f251f;
+    color: #dec7a4;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    position: relative;
+}
+
+button:hover {
+    background-color: #dec7a4;
+    color: #3f251f;
+}
+
+button::after {
+    content: '';
+    display: block;
+    background-image: url("https://thumbs.dreamstime.com/b/cheers-toast-whiskey-two-glasses-clicking-together-over-white-background-splashing-whisky-glasses-cut-glass-45697831.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button:hover::after {
+    opacity: 1;
+}
+
+
 .search {
-    flex: 1;
     margin: auto;
     padding: 10px;
     width: 300px;
@@ -59,8 +91,8 @@ h1, h2 {
 }
 
 #ingredient {
-    width: 100%; 
-    padding: 10px; 
+    width: 100%;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -74,6 +106,7 @@ button {
     cursor: pointer;
     width: 100px;
     height: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -81,12 +114,11 @@ button:hover {
     color: #3f251f;
 }
 
-/* results style */
 #results {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
-    max-width: 800px auto;
+    justify-content: center;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -97,16 +129,17 @@ button:hover {
     background-color: #3f251f;
     color: #dec7a4;
     border-radius: 5px;
-    font-size: smaller;
+    font-size: 1rem;
     width: 300px;
     min-width: 200px;
+    border: 2px solid tan;
 }
 
 h3 {
     margin: 0;
     padding: 0;
     text-transform: capitalize;
-    font-size: large;
+    font-size: 1.2rem;
     text-decoration: underline;
 }
 
@@ -123,9 +156,6 @@ h3 {
     text-wrap: balance;
 }
 
-
-
-/* Footer styles */
 footer {
     padding: 5px;
     text-align: center;
@@ -134,6 +164,8 @@ footer {
     justify-content: center;
     align-items: center;
     border-top: 1px solid gray;
+    background: black;
+    width: 100%;
 }
 
 footer ul {

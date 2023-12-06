@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,29 +23,32 @@
         </div>
     </header>
 
-    <main>
-        <div id="intro" class="intro">
-            <h2>Introduction</h2>
-            <p>On the prowl for an elusive concoction? You've come to the right place! Input a spirit/ingredient below
-                and see what recipes match!</p>
-        </div>
+    <div id="intro" class="intro">
+        <p>Let the compass lead you to drunkness</p>
+    </div>
+    <h2>Search For A Recipe</h2>
+    <div id="search" class="search">
+        <form id="search-form">
+            <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient">
+            <button class="btn" type="submit">Search</button>
+        </form>
+    </div>
 
-        <h2>Search For A Recipe</h2>
-        <div id="search" class="search">
-            <form id="search-form">
-                <input type="text" id="ingredient" placeholder="Enter your spirit or ingredient">
-                <button class="btn" type="submit">Search</button>
-            </form>
-        </div>
-
-        <h2>Results</h2>
-        <div id="results" class="recipe-results">
-            <div class="cocktail-container">
+    <main class="pure-g">
+        <div id="results" class="recipe-results pure-u-3-5">
+            <div class="cocktail-container ">
             </div>
+
         </div>
+        <div id="dad-jokes" class="jokes-results pure-u-1-5">
+            <h3 class="jokeParent">Dad Joke</h3>
+        </div>
+
+
+
+
 
     </main>
-
     <div class="footer">
         <footer id="contact" class="contact">
             <h3>FOOTER</h3>

@@ -36,6 +36,7 @@ The following APIs are leveraged for this search engine:
 1. https://api-ninjas.com/api/cocktail
 2. https://icanhazdadjoke.com/api
 
+
 ## Features
 
 This web-based cocktail search engine has the following features and functions:
@@ -46,7 +47,6 @@ Must Have (MVP):
         - Return any possible recipes that match search
         - Save favorite recipes and display later
     2. Display "dad jokes" that can be leveraged by the user as ice breakers while mixing drinks
-
 
 Nice To Have / Future State Ideas:
 

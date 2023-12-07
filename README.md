@@ -34,7 +34,8 @@ The collaborators have agreed to leverge Trello as a project tracker to ensure a
 The following APIs are leveraged for this search engine:
 
 1. https://api-ninjas.com/api/cocktail
-2. ?
+2. https://icanhazdadjoke.com/api
+
 
 ## Features
 
@@ -44,16 +45,19 @@ Must Have (MVP):
 
     1. Search for cocktail recipes by inputting an ingredient or spirit
         - Return any possible recipes that match search
-        - Display picture of the drink
+        - Save favorite recipes and display later
+    2. Display "dad jokes" that can be leveraged by the user as ice breakers while mixing drinks
 
-Nice To Have:
+Nice To Have / Future State Ideas:
 
-    1. Mult-ingredient search: Ability to search by multiple criteria
-    2. Rank the cocktail
+    1. Age Verification
+    2. Mult-ingredient search: Ability to search by multiple criteria
+    3. Rank the cocktail
         - Auto-suggest drinks in the future
-    2. Pictures of the ingredients 
-    3. API for video tutorial on how to make the drink (i.e.YouTube)
-    4. Mixology tools you need for the drink
+    4. Display picture of the drink
+    5. Pictures of the ingredients 
+    6. API for video tutorial on how to make the drink (i.e.YouTube)
+    7. Mixology tools you need for the drink
         - API to Amazon to connect user to order any tools the user does not have
 
 ## Initial Wireframes

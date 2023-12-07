@@ -12,8 +12,6 @@
 </head>
 
 <body>
-
-
     <header>
         <h1>Welcome To The Cocktail Compass!</h1>
         <div class="header" onclick="menuBar(this)">
@@ -26,6 +24,7 @@
     <div id="intro" class="intro">
         <p>Let the compass lead you to drunkness</p>
     </div>
+
     <h2>Search For A Recipe</h2>
     <div id="search" class="search">
         <form id="search-form">
@@ -36,7 +35,7 @@
 
     <main class="pure-g">
         <div id="results" class="recipe-results pure-u-3-5">
-            <div class="cocktail-container ">
+            <div class="cocktail-container">
             </div>
 
         </div>
@@ -44,19 +43,21 @@
             <h3 class="jokeParent">Dad Joke</h3>
         </div>
 
-
-
-
-
     </main>
+    
     <div class="footer">
         <footer id="contact" class="contact">
-            <h3>FOOTER</h3>
             <ul>
                 <li><a href="#" onclick="displayFavorites()">Saved Drinks</a></li>
-                <li><a href="BLAH">Share Drinks</a></li>
             </ul>
         </footer>
+
+        <div id="saveModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalMessage"></p>
+            </div>
+          </div>    
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="./assets/js/script.js"></script>
